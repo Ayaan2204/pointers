@@ -1,0 +1,20 @@
+#include <stdio.h>
+void fact(int *p,int *q);
+void main()
+{
+    int n;
+    int ans=1;
+   scanf("%d",&n);
+   fact(&n,&ans);
+   printf("%d",ans);
+  
+}
+void fact(int *p,int *q)
+{
+    *q=*p * (*p-1);
+    *p--;
+    if(*p>1)
+    {
+        fact(p,q);
+    }
+}
